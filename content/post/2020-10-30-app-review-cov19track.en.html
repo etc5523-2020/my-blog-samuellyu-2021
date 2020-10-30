@@ -1,0 +1,139 @@
+---
+title: 'Package review: Covid19tracker'
+author: Samuel Lyubic
+date: '2020-10-30'
+slug: app-review-cov19track
+categories:
+  - Pandemic
+  - Apps
+tags:
+  - Covid19
+  - Tracker
+subtitle: ''
+summary: 'An in depth review of the covid19tracker package as developed by Xitong He.'
+authors: []
+lastmod: '2020-10-30T12:30:48+11:00'
+featured: no
+image:
+  caption: ''
+  focal_point: ''
+  preview_only: no
+projects: []
+css: /styling.css
+---
+
+<link href="/rmarkdown-libs/anchor-sections/anchor-sections.css" rel="stylesheet" />
+<script src="/rmarkdown-libs/anchor-sections/anchor-sections.js"></script>
+  <link rel="stylesheet" href="/styling.css" type="text/css" />
+
+
+<div id="what-is-covid19tracker-package-all-about" class="section level2">
+<h2>What is <em>“covid19tracker”</em> package all about?</h2>
+<p>Today I am reviewing the <a href="https://github.com/etc5523-2020/r-package-assessment-xhee0013">covid19tracker</a> package that has been masterfully developed by Xitong He. The <em>covid19tracker</em> package primarily acts as a container for the <em>covid-19-tracker</em> application that offers the user a deep dive into corona virus statistics for the following three countries:</p>
+<ul>
+<li>Australia</li>
+<li>China</li>
+<li>United Kingdom,</li>
+</ul>
+<p>With a focus on the following covid19 statistics which are the number of daily:</p>
+<ul>
+<li>Confirmed cases</li>
+<li>Deaths</li>
+<li>Recovered individuals</li>
+</ul>
+<div class="figure">
+<img src="/img/blog4/app-name-navbar.png" alt="Figure 1: The covid-19-tracker application navbar" />
+<p class="caption"><em>Figure 1: The covid-19-tracker application navbar</em></p>
+</div>
+<p>As shown in Figure 1, across three webpages the user is provided with an interactive, informative and comparative analysis of the chosen covid19 statistics for the chosen countries with covid19 figures provided for each province/capital city from each country from January to September and sourced from the <code>coronavirus</code> package which is provided by <a href="https://github.com/RamiKrispin/coronavirus">RamiKrispin GitHub repo</a>. The analysis opens up with an interactive map which provides the user a selection of locations for each country that can be clicked in order to bring up a figure plotting the covid19 statistics for that location, with further analysis provided by clicking on elements of the map itself and producing a pie chart showing the proportional breakdown of the daily confirmed cases, daily deaths and daily recovered figures by month, as shown in Figure 2. Furthermore, along with the interactive analysis, the application also provides additional resources the can be accessed when the package is installed, which include:</p>
+<ul>
+<li>Two data sets that can be used to recreate the analysis, which are:
+<ul>
+<li><em>covid19_count</em> that offers the COVID-19 statistics for the three countries.</li>
+<li><em>covid19_region</em> that offers the COVID-19 statistics for each region of the three countries.</li>
+</ul></li>
+<li>Three functions that can be used in conjunction with above datasets, which are:
+<ul>
+<li><em>launch_app()</em> this function generates and launches the the <em>covid-19-tracker</em> application.</li>
+<li><em>input_option()</em> which creates the shiny input options for the different variables which are contained in the data sets.</li>
+<li><em>summary_table()</em> which creates a styled and formatted table to represent the summary case situation of COVID19 COVID19 in each country.</li>
+</ul></li>
+</ul>
+<p>Each of these functions and an in depth explanation of the mechanics of the package, its elements and the provided analysis can be accessed through the package <a href="https://etc5523-2020.github.io/r-package-assessment-xhee0013/index.html">covid19tracker website</a>.</p>
+<div class="figure">
+<img src="/img/blog4/analysis.png" alt="Figure 2: Landing page of the covid-19-tracker application" />
+<p class="caption"><em>Figure 2: Landing page of the covid-19-tracker application</em></p>
+</div>
+</div>
+<div id="expectations-and-reality-of-the-covid19tracker-package" class="section level2">
+<h2>Expectations and reality of the <em>covid19tracker</em> package</h2>
+<p>I approached this package with intrigue given the climate we’re in and the importance of staying up to date and aware of the global impact that corona virus is having, my initial expectation of the data that the package would provide came from the package title, <em>covid19tracker</em>, which instantly made clear that this package was providing access to covid19 statistics for locations around the world. With easy and clear instructions for installation and use via the README.md file, as shown in figure 3, the features of this package were easily and quickly accessible.</p>
+<div class="figure">
+<img src="/img/blog4/installation.png" alt="Figure 3: Helpful and easily accessible install instructions" />
+<p class="caption"><em>Figure 3: Helpful and easily accessible install instructions</em></p>
+</div>
+<p>The application stored within this package, is the <em>covid-19-tracker</em> application, which can be accessed with the <em>launch_app()</em> function, my expectations were immediately met as the opening page jumps straight into analysis with the user being provided with an interactive analysis offering a time series and proportional break down of the following three statistics: daily confirmed cases, daily deaths and daily recovered individuals for three chosen countries, as listed above. A level of interactivity in order the ability for exploration into the covid19 statistics was something that was envisioned, once the informative <em>about</em> page had been read, the opportunities for exploration on the <em>Country/Regions Plots</em> page were made very clear and provided as a great guide to engage all the potent features provided to conduct ones own analysis. Although, the application within the package does meet the level of expectation of finding a range of covid19 statistics for various locations, it is a slightly misleading title given it offers the indication that there would be statistics across a vast range of countries, in conjunction with no specification of which countries or statistics will be analysed in the readme or the vignette leads for the expectation to be slightly calibrated to align with, what is, a terrific offering of interactive analysis.</p>
+<p>Furthermore, the provinces selected for the United Kingdom are slightly different to what was expected when looking into United Kingdom data, this came as a welcomed surprise given the information that was accessible for lesser known areas of the United Kingdom. Unfortunately it also does seem that the table providing a on the <em>Covid19-Case-Summary</em> page may have an error when providing analysis for the monthly summaries of the United Kingdom, as it seems the “confirmed” and “Deaths” columns may have been labelled incorrectly, as the data shows that deaths out numbered daily confirmed cases.</p>
+<p>Furthermore, access to certain features such as the data used for analysis was an element that was hoped to be included in order to better understand the analysis provided and recreate it, or take a further dive into the data and exploring from a different avenue, so it came with delight to find the datasets <em>covid19_count</em> and <em>covid19_region</em> included with the package. These datasets were easily accessed and instantly usable in any analysis that I, or any other user, wishes to conduct with the only slight draw back being that the documentation provided didn’t offer the most in depth explanation of the variables selected, with a judgement needing to come from ones own opinion and educated guess, which wasn’t hard to do it all. The inclusion of package functions to produce shiny and analytically output were also met with delight and appreciation for the work that Xitong has put in to developing this package, although not entirely expected, this did come as terrific addition, although some examples of how the functions work and maybe some slightly more in depth explanation of the variables would have allowed for an even greater appreciation of the functionality and usage of this package.</p>
+</div>
+<div id="thoughts-and-recommendations" class="section level2">
+<h2>Thoughts and recommendations</h2>
+<p>The package offers a variety of tools to explore, learn and analyse the impact of corona virus on the chosen three countries however, it could be worth noting for the developer that the documentation leaves the user lacking with a bit of clarity and understanding in whats exactly on offer and how it can be used. Documentation has been provided for every function and element of the package, which provides the user with a general understanding of the datasets provided and the functions of the package however, with the inclusion of examples of how to use the package functions as well as more detailed explanation of the variables being used in the data set would provide for a smoother and exploration process for the user, as with these additions I believe the full, and great, potential of this package could be unlocked!</p>
+<div class="figure">
+<img src="/img/blog4/app-front-page.png" alt="Figure 4: Landing page of the covid-19-tracker application" />
+<p class="caption"><em>Figure 4: Landing page of the covid-19-tracker application</em></p>
+</div>
+<p>Taking a closer inspection into the terrifically developed shiny application, I have a few recommendations which may benefit the users experience with application. As figure 4, shows, the application opens up directly on the analysis page <em>Country/Regions Plots</em> without any real context or explanation of what data the data application is providing for exploration. By accessing the <em>about</em> page these details are made abundantly clear, it would be my recommendation that in the UI the <em>about</em> page is the first tabpanel under the navbar, so when the user opens the application they are met with an informative explanation of the application and its contents. Given the informative and terrific <em>about</em> page that has been provided to the user, it could an improvement for the application to spread some of the details surrounding the data being analysed and the interactivity of the application throughout the different web pages, that way when the user is exploring the data on either the <em>Country/Regions Plots</em> or <em>Covid19-Case-Summary</em> page they have clear instructions and guides as to how to access the data provided and what it is showing.</p>
+</div>
+<div id="what-i-learnt" class="section level2">
+<h2>What I learnt</h2>
+<p>The <em>covid19tracker</em> package has provided me, and in my opinion any user, with a strong grasp of the impact that corona virus has had on Australia, China and the United Kingdom with regards to the daily cases, deaths and recovered persons. By accessing the datasets and applications within the package, it is evident that Australia faced its worst month in July for monthly confirmed cases with 9360 with August recording the highest number of monthly deaths with 456. Conversely, China showed to have their worst month earlier in the with February having 69,554 monthly confirmed cases and 2,624 monthly confirmed deaths. Interestingly, both Australia and China had the most recoveries in the months where they recorded the most deaths, with August for Australia and February for China. Unfortunately due to what seems like an error with the United Kingdom data, no inference can be taken away from the data provided. Which in itself, is a lesson to always check the output of the data being presented as well as ensuring exmaples and accurate guides and explanations for functions and elements within a package to ensure a smooth and informative experience for the user.</p>
+<p>Overall, the developer, Xitong He, has done a terrific job in producing this package and providing the general community with a great resource to look into the covid19 results for Australia and China, go check it out!</p>
+</div>
+<div id="appendix-a" class="section level1">
+<h1>Appendix A</h1>
+<div id="package-review" class="section level2">
+<h2>Package Review</h2>
+<div id="documentation" class="section level4">
+<h4>Documentation</h4>
+<p>The package includes all the following forms of documentation:</p>
+<ul>
+<li>[X] <strong>Installation instructions:</strong> for the package is found in README
+<ul>
+<li>Easy to find at the top of the readme page as well as being directly accessed by allowing the user to copy and paste the lines of code from the README into r resulting in a smooth and seamless installation.</li>
+</ul></li>
+<li>[X] <strong>Vignette(s)</strong> demonstrating major functionality that runs successfully locally
+<ul>
+<li>Vignette is accessible locally and through the package website for which a handy link is provided in the about section of the github repo. Provides a form the explanation for the features, elements and functionality of the package and provides for an overview that isn’t the most detailed however, provides the user with enough of what they need to know about the package and what it entails.</li>
+</ul></li>
+<li>[X] <strong>Function Documentation:</strong> for all exported functions in R help
+<ul>
+<li>All exported functions have documentation completed for them and can be accessed through R or through the package website.</li>
+</ul></li>
+<li>[ ] <strong>Examples</strong> for all exported functions in R Help that run successfully locally
+<ul>
+<li>No examples were provided for the exported functions</li>
+</ul></li>
+</ul>
+</div>
+<div id="functionality" class="section level4">
+<h4>Functionality</h4>
+<ul>
+<li>[X] <strong>Installation:</strong> Installation succeeds as documented.
+<ul>
+<li>Installation process is smooth and easy to follow.</li>
+<li>All functions and elements of the package are operational the moment the package is installed. No extra debugging is required.</li>
+</ul></li>
+<li>[X] <strong>Functionality:</strong> Any functional claims of the software been confirmed.
+<ul>
+<li>Each function and exported element works as described, the most vital function seeming to be <em>launch_app()</em> which launch the application with the package seamlessly as well as the data set provided being accessible as soon as the package is installed.</li>
+</ul></li>
+<li>[X] <strong>Automated tests:</strong> Unit tests cover essential functions of the package
+and a reasonable range of inputs and conditions. All tests pass on the local machine.
+<ul>
+<li>All test pass on the local machine.</li>
+</ul></li>
+</ul>
+</div>
+</div>
+</div>
